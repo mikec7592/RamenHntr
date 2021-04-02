@@ -2,10 +2,15 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: radial-gradient(rgb(253, 17, 17), rgb(48, 23, 23));
+  }
+  div.nav-wrapper, footer.page-footer {
+      background-image: linear-gradient(orange, black);
   }
   
   main {
     flex: 1 0 auto;
+    background-color: blanchedalmond
   }
   
   footer.page-footer {
