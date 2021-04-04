@@ -8,6 +8,7 @@ class Ramen(models.Model):
     price = models.CharField(max_length=6)
     description = models.TextField(max_length=380)
     rating = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name 

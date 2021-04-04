@@ -43,7 +43,10 @@ def add_photo(request, ramen_id):
 
 class RamenCreate(CreateView):
     model = Ramen
-    fields = '__all__'
+    fields = ['name', 'price', 'description','rating']
+    def form_valid(self, form):
+        form.instance.user = self.request.user 
+        return super().form_valid(form)
 
 class RamenUpdate(UpdateView):
     model = Ramen
