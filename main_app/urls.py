@@ -9,4 +9,5 @@ urlpatterns = [
     path('ramen/create', views.RamenCreate.as_view(), name='ramen_create'),
     path('ramen/<int:pk>/update/', views.RamenUpdate.as_view(), name='ramen_update'),
     path('ramen/<int:pk>/delete/', views.RamenDelete.as_view(), name='ramen_delete'),
+    path('ramen/<int:ramen_id>/add_photo/', views.add_photo, name='add_photo'),
 ]
