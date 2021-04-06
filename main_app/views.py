@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Ramen, Photo
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 import uuid
 import boto3
 
@@ -40,6 +42,23 @@ def add_photo(request, ramen_id):
             print('An error occurred uploading file to S3')
             print(photo)
     return redirect('detail', ramen_id=ramen_id)
+
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      # Adding user to database
+      user = form.save()
+      login(request, user)
+      return redirect('index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  # A bad POST or a GET request, so render signup.html with an empty form
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
 
 class RamenCreate(CreateView):
     model = Ramen
