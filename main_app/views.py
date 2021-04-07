@@ -5,6 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 import uuid
 import boto3
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
 BUCKET = 'ramenhntrbucket'
@@ -17,14 +19,17 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+@login_required
 def ramen_index(request):
-    ramen = Ramen.objects.all()
+    ramen = Ramen.objects.filter(user=request.user)
     return render(request, 'ramen/index.html', {'ramen': ramen})
 
+@login_required
 def ramen_detail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
     return render(request, 'ramen/detail.html', {'ramen': ramen})
 
+@login_required
 def add_photo(request, ramen_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -60,17 +65,17 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
-class RamenCreate(CreateView):
+class RamenCreate(LoginRequiredMixin, CreateView):
     model = Ramen
     fields = ['name', 'price', 'description','rating']
     def form_valid(self, form):
         form.instance.user = self.request.user 
         return super().form_valid(form)
 
-class RamenUpdate(UpdateView):
+class RamenUpdate(LoginRequiredMixin, UpdateView):
     model = Ramen
     fields = '__all__'
 
-class RamenDelete(DeleteView):
+class RamenDelete(LoginRequiredMixin, DeleteView):
     model = Ramen
     success_url = '/ramen/'

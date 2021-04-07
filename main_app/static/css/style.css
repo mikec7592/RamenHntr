@@ -10,7 +10,7 @@ body {
   
   main {
     flex: 1 0 auto;
-    background-color: blanchedalmond
+    background-color: rgb(255, 235, 205)
   }
   
   footer.page-footer {

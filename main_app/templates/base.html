@@ -17,12 +17,14 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;RamenHntr</a></li>
         </ul>
         <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
         {% if user.is_authenticated %}
+            <li>Welcome back {{user.username}}!</li>
+            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'ramen_create' %}">Add a New Spot</a></li>
             <li><a href="{% url 'index' %}">View My Ramen Spots</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
+            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
