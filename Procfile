@@ -1,1 +1,1 @@
-web: gunicorn RamenHntrl.wsgi
+web: gunicorn RamenHntr.wsgi
