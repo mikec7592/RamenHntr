@@ -19,11 +19,15 @@ body {
   }
 
   .card {
-      background-image: linear-gradient(to right, rgb(185, 105, 30), rgba(0, 0, 0, 0.911));
+      background-image: linear-gradient(to right, rgb(185, 105, 30), rgba(0, 0, 0, 0.3));
   }
 
   .card-title {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      color: crimson;
+      color: black;
+  }
+
+  .card-content {
+      color: brown;
   }
   

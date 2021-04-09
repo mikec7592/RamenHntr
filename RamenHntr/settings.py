@@ -130,3 +130,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/ramen/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+#for deploying djanog apps to heroku
+import django_heroku
+django_heroku.settings(locals())
