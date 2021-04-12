@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: radial-gradient(rgb(253, 17, 17), rgb(48, 23, 23));
+    background-image: url(https://images.unsplash.com/photo-1568018508399-e53bc8babdde?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFtZW4lMjBzaG9wfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80);
   }
   div.nav-wrapper, footer.page-footer {
       background-image: linear-gradient(orange, black);
@@ -10,7 +10,7 @@ body {
   
   main {
     flex: 1 0 auto;
-    background-color: rgb(255, 235, 205)
+    background-color: rgb(160, 125, 73, 0.9);
   }
   
   footer.page-footer {
@@ -31,3 +31,10 @@ body {
       color: brown;
   }
   
+  h1 {
+    text-align: center;
+  }
+
+  label {
+    color: gold;
+  }

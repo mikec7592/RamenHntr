@@ -8,7 +8,7 @@ import boto3
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'ramenhntrbucket'
 
 # Create your views here.
