@@ -1,6 +1,7 @@
 # RamenHntr
 
 ## An all purpose Ramen tracking app
+Check it out here [RamenHntr](https://ramen-hntr.herokuapp.com/)
 
 ### Technologies Used
 - SQL Database(postgres)
