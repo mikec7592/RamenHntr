@@ -20,3 +20,11 @@ A user can:
  ### Possible Additions to functionality
  - Google maps api for directions and location of individual Restaurants
  
+
+
+#### Resources used for this project
+-Various Youtube videos for authentication and authorization
+-Resources provided by John(Links to lessons used from his cohorts)
+-Django DOCS!
+-Debugging help from my peers (Cat and David)
+-Amazon S3 help and FAQ stuff
